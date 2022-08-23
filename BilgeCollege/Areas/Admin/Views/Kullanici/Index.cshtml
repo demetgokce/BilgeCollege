@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Kullanici>
+
+<p>
+    <a class="btn btn-success" asp-controller="Kullanici" asp-action="Create">Yeni</a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Id)</td>
+            <td>@Html.DisplayNameFor(model => model.UserName)</td>
+            <td>@Html.DisplayNameFor(model => model.Password)</td>
+            <td>@Html.DisplayNameFor(model => model.Email)</td>
+            <td>@Html.DisplayNameFor(model => model.Role)</td>
+            <td>Islem</td>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.UserName</td>
+                <td>@item.Password</td>
+                <td>@item.Email</td>
+                <td>@item.Role</td>
+                <td>
+                    <a asp-controller="Kullanici" asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary">Guncelle</a>
+                    <a asp-controller="Kullanici" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Sil</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

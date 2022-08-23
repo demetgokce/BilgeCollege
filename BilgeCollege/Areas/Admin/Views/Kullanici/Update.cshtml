@@ -1,0 +1,42 @@
+﻿@model Kullanici
+
+<form method="post" asp-controller="Kullanici" asp-action="Update">
+
+    <div class="form-group row">
+        <label asp-for="UserName" class="col-md-6 col-form-label"></label>
+        <div class="col-md-6">
+            <input type="text" asp-for="UserName" class="form-control" value="@Model.UserName" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Email" class="col-md-6 col-form-label"></label>
+        <div class="col-md-6">
+            <input type="email" asp-for="Email" class="form-control" value="@Model.Email" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Password" class="col-md-6 col-form-label"></label>
+        <div class="col-md-6">
+            <input type="password" asp-for="Password" class="form-control" value="@Model.Password" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="RePassword" class="col-md-6 col-form-label"></label>
+        <div class="col-md-6">
+            <input type="password" asp-for="RePassword" class="form-control" value="@Model.RePassword" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Role" class="col-md-6 col-form-label"></label>
+        <div class="col-md-6">
+            <input type="text" asp-for="Role" class="form-control" value="@Model.Role" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </div>
+    <div class="form-group row">
+        <a class="btn btn-secondary" asp-action="Index" asp-controller="Kullanici">Geri Dön</a>
+    </div>
+
+</form>

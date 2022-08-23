@@ -1,0 +1,54 @@
+﻿@model IEnumerable<OgretmenDers>
+
+<p>
+    <a class="btn btn-success" asp-controller="OgretmenDers" asp-action="Create">Yeni</a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ogretmen.OgretmenId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ogretmen.Ad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ogretmen.Soyad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ders.DersId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ders.DersAd)
+            </th>
+            <th>Islemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ogretmen.OgretmenId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ogretmen.Ad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ogretmen.Soyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ders.DersId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ders.DersAd)
+            </td>
+            <td>
+                <a asp-action="Update" asp-route-id="@item.DersId @item.OgretmenId" class="btn btn-primary">Update</a> |
+
+                <a asp-action="Delete" asp-route-id="@item.DersId @item.OgretmenId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Sinif>
+@{
+    Layout = "../Shared/_Layout.cshtml";
+    ViewBag.Title = "Sinif Listesi";
+}
+<p>
+    <a class="btn btn-success" asp-controller="Sinif" asp-action="Create">Yeni</a>
+</p>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <td> @Html.DisplayNameFor(model => model.SiniflarId)</td>
+            <td> @Html.DisplayNameFor(model => model.SinifAdi)</td>
+            <td> @Html.DisplayNameFor(model => model.Kapasite)</td>
+            
+
+
+            <td>İşlem</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SiniflarId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SinifAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kapasite)
+            </td>
+          
+
+            <td>
+
+                <a class="btn btn-outline-info" asp-action="Update" asp-route-id="@item.SiniflarId"><i class="bi bi-eye"></i>Güncelle</a> |
+                <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.SiniflarId"><i class="bi bi-trash"></i>Sil</a>
+
+
+            </td>
+        </tr>
+        }
+
+
+
+    </tbody>
+</table>

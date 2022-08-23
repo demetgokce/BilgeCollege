@@ -1,0 +1,27 @@
+﻿@model Sinif
+
+<form method="post" asp-controller="Sinif" asp-action="Update">
+
+    <div class="form-group row">
+        <label asp-for="SinifAdi" class="col-md-4 col-form-label"></label>
+        <div class="col-md-8">
+            <input type="text" asp-for="SinifAdi" class="form-control" value="@Model.SinifAdi" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Kapasite" class="col-md-4 col-form-label"></label>
+        <div class="col-md-8">
+            <input type="text" asp-for="Kapasite" class="form-control" value="@Model.Kapasite" />
+        </div>
+    </div>
+
+  
+   
+    <div class="form-group row">
+        <button type="submit" class="btn btn-primary">Güncelle</button>
+    </div>
+    <div class="form-group row">
+        <a class="btn btn-secondary" asp-action="Index" asp-controller="Sinif">Geri Dön</a>
+    </div>
+
+</form>

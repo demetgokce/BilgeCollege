@@ -1,0 +1,54 @@
+﻿@model IEnumerable<OgrenciSiniflar>
+
+<p>
+    <a class="btn btn-success" asp-controller="OgrenciSiniflar" asp-action="Create">Yeni</a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Siniflar.SiniflarId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Siniflar.SinifAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ogrenci.OgrenciId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ogrenci.Adi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ogrenci.Soyadi)
+            </th>
+            <th>Islemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Siniflar.SiniflarId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Siniflar.SinifAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ogrenci.OgrenciId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ogrenci.Adi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ogrenci.Soyadi)
+            </td>
+            <td>
+                <a asp-action="Update" asp-route-id="@item.SiniflarId @item.OgrenciId" class="btn btn-primary">Update</a> |
+
+                <a asp-action="Delete" asp-route-id="@item.SiniflarId @item.OgrenciId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

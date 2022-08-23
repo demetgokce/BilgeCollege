@@ -1,0 +1,25 @@
+﻿@model Kullanici
+
+<form method="post" asp-controller="Kullanici" asp-action="Delete">
+
+    <div class="form-group row">
+        <label asp-for="UserName" class="col-md-2 col-form-label">@Model.UserName</label>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Email" class="col-md-2 col-form-label">@Model.Email</label>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Password" class="col-md-2 col-form-label">@Model.Password</label>
+    </div>
+    <div class="form-group row">
+        <label asp-for="RePassword" class="col-md-2 col-form-label">@Model.RePassword</label>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Role" class="col-md-2 col-form-label">@Model.Role</label>
+    </div>
+    <p>Bu kaydi Silmek istediginizden eminmisiniz ?</p>
+    <div class="form-group row">
+        <button type="submit" class="btn btn-primary">Sil</button>
+        <a class="btn btn-secondary" asp-action="Index" asp-controller="Kullanici">Listeye Geri Dön</a>
+    </div>
+</form>

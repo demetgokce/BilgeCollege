@@ -1,0 +1,61 @@
+﻿@model Ogretmen
+
+<form method="post" asp-controller="Ogretmen" asp-action="Update">
+
+    <div class="form-group row">
+        <label asp-for="Ad" class="col-md-4 col-form-label"></label>
+        <div class="col-md-8">
+            <input type="text" asp-for="Ad" class="form-control" value="@Model.Ad" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Soyad" class="col-md-4 col-form-label"></label>
+        <div class="col-md-8">
+            <input type="text" asp-for="Soyad" class="form-control" value="@Model.Soyad" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Gsm" class="col-md-4 col-form-label"></label>
+        <div class="col-md-8">
+            <input type="text" asp-for="Gsm" class="form-control" value="@Model.Gsm" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="TcNo" class="col-md-4 col-form-label"></label>
+        <div class="col-md-8">
+            <input type="text" asp-for="TcNo" class="form-control" value="@Model.TcNo" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="EPosta" class="col-md-4 col-form-label"></label>
+        <div class="col-md-8">
+            <input type="text" asp-for="EPosta" class="form-control" value="@Model.EPosta" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="GirisTarih" class="col-md-4 col-form-label"></label>
+        <div class="col-md-8">
+            <input type="text" asp-for="GirisTarih" class="form-control" value="@Model.GirisTarih" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="CikisTarih" class="col-md-4 col-form-label"></label>
+        <div class="col-md-8">
+            <input type="text" asp-for="CikisTarih" class="form-control" value="@Model.CikisTarih" />
+        </div>
+    </div>
+  
+    <div class="form-group row">
+        <label asp-for="DogumTarih" class="col-md-4 col-form-label"></label>
+        <div class="col-md-8">
+            <input type="text" asp-for="DogumTarih" class="form-control" value="@Model.DogumTarih" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <button type="submit" class="btn btn-primary">Güncelle</button>
+    </div>
+    <div class="form-group row">
+        <a class="btn btn-secondary" asp-action="Index" asp-controller="Ogretmen">Geri Dön</a>
+    </div>
+
+</form>

@@ -1,0 +1,47 @@
+﻿@model OgretmenDers
+
+
+
+<form method="post" asp-controller="OgretmenDers" asp-action="Delete">
+
+    <div class="form-group row">
+        <label asp-for="Ogretmen.OgretmenId" class="col-md-2 col-form-label">@Model.Ogretmen.OgretmenId</label>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Ders.DersId" class="col-md-2 col-form-label">@Model.Ders.DersId</label>
+    </div>
+
+    <p>Bu kaydi Silmek istediginizden eminmisiniz ?</p>
+    <div class="form-group row">
+        <button type="submit" class="btn btn-primary">Sil</button>
+        <a class="btn btn-secondary" asp-action="Index" asp-controller="OgretmenDers">Listeye Geri Dön</a>
+    </div>
+</form>
+
+
+
+@*
+    <table class="table table-bordered">
+        <dl class="row">
+            <dt class = "col-sm-6">
+                @Html.DisplayNameFor(model => model.TemsilEttigiFirma)
+            </dt>
+            <dd class = "col-sm-6">
+                @Html.DisplayFor(model => model.TemsilEttigiFirma.TemsilEttigiFirmaId)
+            </dd class>
+            <dt class = "col-sm-6">
+                @Html.DisplayNameFor(model => model.FirmaTipi)
+            </dt>
+            <dd class = "col-sm-6">
+                @Html.DisplayFor(model => model.FirmaTipi.FirmaTipId)
+            </dd class>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="TemsilEttigiFirmaId" />
+            <input type="hidden" asp-for="FirmaTipId" />
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            <a asp-action="Index">Listeye Dön</a>
+        </form>
+    </table>
+*@
