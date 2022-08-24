@@ -44,11 +44,10 @@ namespace Bilge.DAL.Repository
 
         public void Update(TEntity entity)
         {
-
+            // TEntity entityEntry = dbContext.Entry<TEntity>(entity);
 
 
             dbContext.Entry<TEntity>(entity).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-            //dbContext.Set<TEntity>().Update(entity);
             dbContext.SaveChanges();
         }
 

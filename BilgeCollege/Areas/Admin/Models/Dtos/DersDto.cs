@@ -14,8 +14,7 @@ namespace BilgeCollege.Areas.Admin.Models.Dtos
         [Display(Name = "DersAdı")]
         public string DersAd { get; set; }
 
-        public string Kod { get; set; }
-        public ICollection<Ogretmen> Ogretmen { get; set; }
+        public ICollection<OgretmenDers> Ogretmen { get; set; }
 
 
 

@@ -71,7 +71,7 @@ namespace BilgeCollege.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 manager.Update(sinif);
-                return RedirectToAction("Index", "Sinif");
+                return RedirectToAction("Index", "Siniflar");
             }
             return View();
         }

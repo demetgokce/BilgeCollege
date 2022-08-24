@@ -51,7 +51,7 @@ namespace BilgeCollege.Areas.Admin.Controllers
             //new SelectList(fruits, "Id", "SinifAdi");
             var sinif = siniflarManager.GetAll(null);
             var sinifSelect = mapper.Map<List<Siniflar>, List<SinifModel>>(sinif);
-            createDto.Sinif = new SelectList(sinifSelect, "Id", "SinifAdi");
+            createDto.Sinif = new SelectList(sinifSelect, "Id", "SiniflarId");
 
             return View(createDto);
         }

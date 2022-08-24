@@ -69,6 +69,7 @@ namespace BilgeCollege.Areas.Admin.Controllers
             }
             return View();
         }
+        [HttpGet]
         public IActionResult Update(int id)
         {
             var entity = manager.Find(id);
