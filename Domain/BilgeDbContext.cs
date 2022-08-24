@@ -42,8 +42,8 @@ namespace Domain
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<OgrenciSiniflar>().HasKey(x => new { x.OgrenciId, x.SiniflarId });
-            modelBuilder.Entity<OgrenciSiniflar>().HasOne(x => x.Ogrenci).WithMany(x => x.Siniflar).HasForeignKey(x => x.OgrenciId);
-            modelBuilder.Entity<OgrenciSiniflar>().HasOne(x => x.Siniflar).WithMany(x => x.Ogrenci).HasForeignKey(x => x.SiniflarId);
+            modelBuilder.Entity<OgrenciSiniflar>().HasOne(x => x.Ogrenci).WithMany(x => x.Siniflar).HasForeignKey(x => x.SiniflarId);
+            modelBuilder.Entity<OgrenciSiniflar>().HasOne(x => x.Siniflar).WithMany(x => x.Ogrenci).HasForeignKey(x => x.OgrenciId);
 
 
             modelBuilder.Entity<OgretmenDers>().HasKey(x => new { x.DersId, x.OgretmenId });

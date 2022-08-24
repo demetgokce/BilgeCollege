@@ -42,8 +42,9 @@ namespace BilgeCollege.Areas.Admin.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DersId"] = new SelectList(_context.Ogretmenler, "OgretmenId", "OgretmenId", ogretmenders.DersId);
             ViewData["OgretmenId"] = new SelectList(_context.Ders, "DersId", "DersId", ogretmenders.OgretmenId);
+            ViewData["DersId"] = new SelectList(_context.Ogretmenler, "OgretmenId", "OgretmenId", ogretmenders.DersId);
+         
             return View(ogretmenders);
           
         }

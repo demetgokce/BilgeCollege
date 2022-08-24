@@ -45,8 +45,8 @@ namespace BilgeCollege.Areas.Admin.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["OgrenciId"] = new SelectList(_context.Ogrenciler, "SiniflarId", "SiniflarId", ogrencisiniflar.OgrenciId);
-            ViewData["SiniflarId"] = new SelectList(_context.Siniflar, "OgrenciId", "OgrenciId", ogrencisiniflar.SiniflarId);
+            ViewData["OgrenciId"] = new SelectList(_context.Siniflar, "SiniflarId", "SiniflarId", ogrencisiniflar.OgrenciId);
+            ViewData["SiniflarId"] = new SelectList(_context.Ogrenciler, "OgrenciId", "OgrenciId", ogrencisiniflar.SiniflarId);
             return View(ogrencisiniflar);
         }
         private bool OgrenciSiniflarExists(int id)
@@ -95,7 +95,7 @@ namespace BilgeCollege.Areas.Admin.Controllers
                 return NotFound();
             }
             ViewData["SiniflarId"] = new SelectList(_context.Ogrenciler, "OgrenciId", "OgrenciId", ogrencisiniflar.SiniflarId);
-            ViewData["OgrenciId"] = new SelectList(_context.Siniflar, "OgrenciId", "OgrenciId", ogrencisiniflar.OgrenciId);
+            ViewData["OgrenciId"] = new SelectList(_context.Siniflar, "SiniflarId", "SiniflarId", ogrencisiniflar.OgrenciId);
             return View(ogrencisiniflar);
 
         }
